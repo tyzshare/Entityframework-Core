@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        SIS_数据库关系模型图
+    </title>
+    <script src="jquery.min.js"></script>
+    <!-- 创建记录 -->
+    <script type="text/javascript">
+
+        $(function () {
+
+            //$.post("/api/browserecords", { "Url": "http://192.168.50.210:100/", "IP": ip, "UrlComment": "数据库关系模型图站点" }, function (data) { });
+
+            $.ajax({
+                url: "/api/OrgUserBurialPoint",    //请求的url地址
+                //dataType: "json",   //服务器返回格式为json
+                async: true,//请求是否异步，默认为异步，这也是ajax重要特性
+                data: JSON.stringify({ "SiteCode": "sis-dev3" }),    //参数值
+                //data: { "url": "http://192.168.50.210:100" },    //参数值
+                type: "post",   //请求方式 get 或者post
+                //contentType: "application/json-patch+json",//发给服务器的格式
+                contentType: "application/json",//发给服务器的格式
+                //contentType: "application/x-www-form-urlencoded; charset=UTF-8",//发给服务器的格式
+                beforeSend: function () {
+                    //请求前的处理
+                },
+                success: function (req) {
+                    //请求成功时处理
+                },
+                complete: function () {
+                    //请求完成的处理
+                },
+                error: function () {
+                    //请求出错处理
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    Hello World!
+</body>
+</html>
