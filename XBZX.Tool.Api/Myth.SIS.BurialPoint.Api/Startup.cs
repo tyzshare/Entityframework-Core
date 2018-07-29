@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
-using Exceptionless;
 
 namespace Myth.SIS.BurialPoint.Api
 {

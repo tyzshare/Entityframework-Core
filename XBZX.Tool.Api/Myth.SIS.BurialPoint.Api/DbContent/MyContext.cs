@@ -18,10 +18,6 @@ namespace Myth.SIS.BurialPoint.Api
         /// <param name="options"></param>
         public MyContext(DbContextOptions<MyContext> options) : base(options)
         { }
-        /// <summary>
-        /// 机构员工埋点记录
-        /// </summary>
-        public DbSet<OrgUserBurialPointRepo> OrgUserBurialPointRepos { get; set; }
 
         /// <summary>
         /// 书

@@ -9,15 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\OrgUserBurialPointController.cs" />
-    <Compile Remove="DbContent\OrgUserBurialPointRepo.cs" />
-    <Compile Remove="Models\CreateOrgUserBurialPointModel.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Exceptionless.AspNetCore" Version="4.3.2004" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.0-rc1-final" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
   </ItemGroup>

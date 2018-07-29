@@ -4,43 +4,34 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Myth.SIS.BurialPoint.Api.DbContent
+namespace Myth.SIS.BurialPoint.Api.Models
 {
     /// <summary>
-    /// 书的实体模型
+    /// 创建书籍Model
     /// </summary>
-    public class BookRepo
+     public class CreateBookModel
     {
         /// <summary>
-        /// Id
+        /// 名称
         /// </summary>
-
-        public long Id
+        //[Required,MaxLength(100)]
+        public string Name
         {
             get; set;
         }
         /// <summary>
-        /// 名称
-        /// </summary>
-        [Required,MaxLength(100)]
-        public string Name
-        {
-            get; set;
-        } = string.Empty;
-        /// <summary>
         /// 描述
         /// </summary>
-        [Required, MaxLength(100)]
         public string Description
         {
-            get;set;
-        } = string.Empty;
+            get; set;
+        }
         /// <summary>
         /// 单价
         /// </summary>
         public decimal Price
         {
-            get;set;
+            get; set;
         }
         /// <summary>
         ///发布日期
@@ -49,13 +40,6 @@ namespace Myth.SIS.BurialPoint.Api.DbContent
         {
             get; set;
         } = DateTime.Now;
-        /// <summary>
-        /// 分类Id
-        /// </summary>
-        //public long TypeId
-        //{
-        //    get; set;
-        //}
-    }
 
+    }
 }
