@@ -18,12 +18,10 @@ namespace Myth.SIS.BurialPoint.Api
         /// <param name="options"></param>
         public MyContext(DbContextOptions<MyContext> options) : base(options)
         { }
-
         /// <summary>
         /// 书
         /// </summary>
         public DbSet<BookRepo> BookRepos { get; set; }
-
-
+        
     }
 }

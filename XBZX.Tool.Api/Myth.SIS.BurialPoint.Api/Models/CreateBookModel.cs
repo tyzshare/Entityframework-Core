@@ -22,6 +22,7 @@ namespace Myth.SIS.BurialPoint.Api.Models
         /// <summary>
         /// 描述
         /// </summary>
+        [Required, MaxLength(1000)]
         public string Description
         {
             get; set;

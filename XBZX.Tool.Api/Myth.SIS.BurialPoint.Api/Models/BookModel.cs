@@ -45,6 +45,6 @@ namespace Myth.SIS.BurialPoint.Api.Models
         public DateTime PublishDate
         {
             get; set;
-        } = DateTime.Now;
+        } 
     }
 }

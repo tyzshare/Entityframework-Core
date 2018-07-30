@@ -9,9 +9,11 @@ using Myth.SIS.BurialPoint.Api.Models;
 
 namespace Myth.SIS.BurialPoint.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class BookController : ControllerBase
+    /// <summary>
+    /// 书籍的webapi
+    /// </summary>
+    [Route("api/book")]
+    public class BookController : Controller
     {
         private MyContext Context;
 
@@ -27,31 +29,46 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// 查询所有的书籍
         /// </summary>
         /// <returns></returns>
-        // GET: api/Book
         [HttpGet]
-        public List<BookModel> Get()
+        public List<BookModel> GetList()
         {
-            //var result= Context.
-            //return new string[] { "value1", "value2" };
-            return null;
+            var result = Context.BookRepos.Select(o => new BookModel()
+            {
+                Id = o.Id,
+                Name = o.Name,
+                Description = o.Description,
+                PublishDate = o.PublishDate,
+                Price = o.Price
+            }).ToList();
+            return result;
         }
 
-        // GET: api/Book/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        /// <summary>
+        /// 查询单本书籍的详情
+        /// </summary>
+        /// <param name="id">书id</param>
+        /// <returns></returns>
+        //[HttpGet]
+        //public BookModel GetDetail(int id)
+        //{
+        //    var result = Context.BookRepos.Where(o => o.Id == id).Select(o => new BookModel()
+        //    {
+        //        Id = o.Id,
+        //        Name = o.Name,
+        //        Description = o.Description,
+        //        PublishDate = o.PublishDate,
+        //        Price = o.Price
+        //    }).FirstOrDefault();
+        //    return result;
+        //}
 
         /// <summary>
         /// 新增书籍
         /// </summary>
         /// <param name="model">新增书籍model</param>
-        // POST: api/Book
         [HttpPost]
         public bool Create([FromBody]CreateBookModel model)
         {
-            //model.Validate();
             Context.BookRepos.Add(new BookRepo()
             {
                 Name = model.Name,
@@ -61,17 +78,40 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
             });
             return Context.SaveChanges() > 0;
         }
-
-        // PUT: api/Book/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        /// <summary>
+        /// 修改书籍
+        /// </summary>
+        /// <param name="model">修改书籍model</param>
+        /// <returns></returns>
+        //[HttpPost]
+        //public bool Update([FromBody] UpdateBookModel model)
+        //{
+        //    var entity = Context.BookRepos.Where(o => o.Id == model.Id).FirstOrDefault();
+        //    if (entity == null)
+        //    {
+        //        throw new Exception();
+        //    }
+        //    entity.Name = model.Name;
+        //    entity.Price = model.Price;
+        //    entity.PublishDate = model.PublishDate;
+        //    entity.Description = model.Description;
+        //    return Context.SaveChanges() > 0;
+        //}
+        ///// <summary>
+        ///// 删除书籍
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpPost]
+        //public bool Delete(int id)
+        //{
+        //    var entity = Context.BookRepos.Where(o => o.Id == id).FirstOrDefault();
+        //    if (entity == null)
+        //    {
+        //        throw new Exception();
+        //    }
+        //    Context.BookRepos.Remove(entity);
+        //    return Context.SaveChanges() > 0;
+        //}
     }
 }

@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Myth.SIS.BurialPoint.Api.DbContent
+namespace Myth.SIS.BurialPoint.Api.Models
 {
     /// <summary>
-    /// 书的实体模型
+    /// 创建书籍Model
     /// </summary>
-    [Table("books")]
-    public class BookRepo
+    public class UpdateBookModel
     {
         /// <summary>
         /// Id
         /// </summary>
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id
         {
-            get; set;
+            get;set;
         }
         /// <summary>
         /// 名称
@@ -38,7 +35,7 @@ namespace Myth.SIS.BurialPoint.Api.DbContent
             get; set;
         }
         /// <summary>
-        ///  单价
+        /// 单价
         /// </summary>
         public decimal Price
         {
