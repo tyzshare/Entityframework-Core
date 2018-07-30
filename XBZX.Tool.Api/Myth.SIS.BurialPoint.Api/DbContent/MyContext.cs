@@ -22,8 +22,7 @@ namespace Myth.SIS.BurialPoint.Api
         /// 书
         /// </summary>
         public DbSet<BookRepo> BookRepos { get; set; }
-
-        public DbSet<BookaaRepo> BookaaRepos { get; set; }
+        
 
     }
 }

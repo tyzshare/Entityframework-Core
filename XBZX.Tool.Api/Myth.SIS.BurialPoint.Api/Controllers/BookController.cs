@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Myth.SIS.BurialPoint.Api.DbContent;
 using Myth.SIS.BurialPoint.Api.Models;
 
+
 namespace Myth.SIS.BurialPoint.Api.Controllers
 {
     /// <summary>
     /// 书籍的webapi
     /// </summary>
     [Route("api/book")]
+    [ApiController]
     public class BookController : Controller
     {
         private MyContext Context;
@@ -30,6 +32,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("Book/GetList")]
         public List<BookModel> GetList()
         {
             var result = Context.BookRepos.Select(o => new BookModel()
@@ -48,25 +51,27 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// </summary>
         /// <param name="id">书id</param>
         /// <returns></returns>
-        //[HttpGet]
-        //public BookModel GetDetail(int id)
-        //{
-        //    var result = Context.BookRepos.Where(o => o.Id == id).Select(o => new BookModel()
-        //    {
-        //        Id = o.Id,
-        //        Name = o.Name,
-        //        Description = o.Description,
-        //        PublishDate = o.PublishDate,
-        //        Price = o.Price
-        //    }).FirstOrDefault();
-        //    return result;
-        //}
+        [HttpGet]
+        [Route("Book/GetDetail")]
+        public BookModel GetDetail(int id)
+        {
+            var result = Context.BookRepos.Where(o => o.Id == id).Select(o => new BookModel()
+            {
+                Id = o.Id,
+                Name = o.Name,
+                Description = o.Description,
+                PublishDate = o.PublishDate,
+                Price = o.Price
+            }).FirstOrDefault();
+            return result;
+        }
 
         /// <summary>
         /// 新增书籍
         /// </summary>
         /// <param name="model">新增书籍model</param>
         [HttpPost]
+        [Route("Book/Create")]
         public bool Create([FromBody]CreateBookModel model)
         {
             Context.BookRepos.Add(new BookRepo()
@@ -83,35 +88,37 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// </summary>
         /// <param name="model">修改书籍model</param>
         /// <returns></returns>
-        //[HttpPost]
-        //public bool Update([FromBody] UpdateBookModel model)
-        //{
-        //    var entity = Context.BookRepos.Where(o => o.Id == model.Id).FirstOrDefault();
-        //    if (entity == null)
-        //    {
-        //        throw new Exception();
-        //    }
-        //    entity.Name = model.Name;
-        //    entity.Price = model.Price;
-        //    entity.PublishDate = model.PublishDate;
-        //    entity.Description = model.Description;
-        //    return Context.SaveChanges() > 0;
-        //}
-        ///// <summary>
-        ///// 删除书籍
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //[HttpPost]
-        //public bool Delete(int id)
-        //{
-        //    var entity = Context.BookRepos.Where(o => o.Id == id).FirstOrDefault();
-        //    if (entity == null)
-        //    {
-        //        throw new Exception();
-        //    }
-        //    Context.BookRepos.Remove(entity);
-        //    return Context.SaveChanges() > 0;
-        //}
+        [HttpPost]
+        [Route("Book/Update")]
+        public bool Update([FromBody] UpdateBookModel model)
+        {
+            var entity = Context.BookRepos.Where(o => o.Id == model.Id).FirstOrDefault();
+            if (entity == null)
+            {
+                throw new Exception();
+            }
+            entity.Name = model.Name;
+            entity.Price = model.Price;
+            entity.PublishDate = model.PublishDate;
+            entity.Description = model.Description;
+            return Context.SaveChanges() > 0;
+        }
+        /// <summary>
+        /// 删除书籍
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("Book/Delete")]
+        public bool Delete(int id)
+        {
+            var entity = Context.BookRepos.Where(o => o.Id == id).FirstOrDefault();
+            if (entity == null)
+            {
+                throw new Exception();
+            }
+            Context.BookRepos.Remove(entity);
+            return Context.SaveChanges() > 0;
+        }
     }
 }
