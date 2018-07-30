@@ -52,14 +52,14 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         public bool Create([FromBody]CreateBookModel model)
         {
             //model.Validate();
-            Context.BookRepos.Add(new BookRepo() {
-                  Name=model.Name,
-                   Price=model.Price,
-                    PublishDate=model.PublishDate,
-                     //TypeId=model.TypeId,
-                      Description=model.Description
-            } );
-            return Context.SaveChanges()>0;
+            Context.BookRepos.Add(new BookRepo()
+            {
+                Name = model.Name,
+                Price = model.Price,
+                PublishDate = model.PublishDate,
+                Description = model.Description
+            });
+            return Context.SaveChanges() > 0;
         }
 
         // PUT: api/Book/5

@@ -9,12 +9,12 @@ namespace Myth.SIS.BurialPoint.Api.Models
     /// <summary>
     /// 创建书籍Model
     /// </summary>
-     public class CreateBookModel
+    public class CreateBookModel
     {
         /// <summary>
         /// 名称
         /// </summary>
-        //[Required,MaxLength(100)]
+        [Required, MaxLength(100)]
         public string Name
         {
             get; set;
@@ -39,7 +39,6 @@ namespace Myth.SIS.BurialPoint.Api.Models
         public DateTime PublishDate
         {
             get; set;
-        } = DateTime.Now;
-
+        }
     }
 }

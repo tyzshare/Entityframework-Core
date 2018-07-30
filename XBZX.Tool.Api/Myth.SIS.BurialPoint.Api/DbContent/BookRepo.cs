@@ -22,7 +22,7 @@ namespace Myth.SIS.BurialPoint.Api.DbContent
         /// <summary>
         /// 名称
         /// </summary>
-        [Required,MaxLength(100)]
+        [Required, MaxLength(100)]
         public string Name
         {
             get; set;
@@ -33,14 +33,14 @@ namespace Myth.SIS.BurialPoint.Api.DbContent
         [Required, MaxLength(100)]
         public string Description
         {
-            get;set;
+            get; set;
         } = string.Empty;
         /// <summary>
         /// 单价
         /// </summary>
         public decimal Price
         {
-            get;set;
+            get; set;
         }
         /// <summary>
         ///发布日期
@@ -49,13 +49,5 @@ namespace Myth.SIS.BurialPoint.Api.DbContent
         {
             get; set;
         } = DateTime.Now;
-        /// <summary>
-        /// 分类Id
-        /// </summary>
-        //public long TypeId
-        //{
-        //    get; set;
-        //}
     }
-
 }
