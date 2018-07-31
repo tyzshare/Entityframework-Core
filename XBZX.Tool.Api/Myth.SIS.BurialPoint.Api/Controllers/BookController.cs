@@ -13,7 +13,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
     /// <summary>
     /// 书籍的webapi
     /// </summary>
-    [Route("api/book")]
+    [Route("api/Book")]
     [ApiController]
     public class BookController : Controller
     {
@@ -32,7 +32,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("Book/GetList")]
+        [Route("GetList")]
         public List<BookModel> GetList()
         {
             var result = Context.BookRepos.Select(o => new BookModel()
@@ -52,7 +52,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// <param name="id">书id</param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Book/GetDetail")]
+        [Route("GetDetail")]
         public BookModel GetDetail(int id)
         {
             var result = Context.BookRepos.Where(o => o.Id == id).Select(o => new BookModel()
@@ -71,7 +71,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// </summary>
         /// <param name="model">新增书籍model</param>
         [HttpPost]
-        [Route("Book/Create")]
+        [Route("Create")]
         public bool Create([FromBody]CreateBookModel model)
         {
             Context.BookRepos.Add(new BookRepo()
@@ -89,7 +89,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// <param name="model">修改书籍model</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("Book/Update")]
+        [Route("Update")]
         public bool Update([FromBody] UpdateBookModel model)
         {
             var entity = Context.BookRepos.Where(o => o.Id == model.Id).FirstOrDefault();
@@ -109,7 +109,7 @@ namespace Myth.SIS.BurialPoint.Api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("Book/Delete")]
+        [Route("Delete")]
         public bool Delete(int id)
         {
             var entity = Context.BookRepos.Where(o => o.Id == id).FirstOrDefault();
