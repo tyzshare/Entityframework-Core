@@ -18,43 +18,16 @@ namespace XBZX.Training.EFCore.WebApi.Controllers
         {
             _bookService = bookService;
         }
-
-        // GET: api/Book
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET: api/Book/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-
+        
         /// <summary>
         ///  创建课本
         /// </summary>
         /// <param name="book"></param>
         [HttpPost]
         [Route("CreateBook")]
-        public void CreateBook([FromBody] CreateBookDto book)
+        public bool CreateBook([FromBody] CreateBookDto book)
         {
-            _bookService.CreateBook(book);
+            return _bookService.CreateBook(book);
         }
-
-        //// PUT: api/Book/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

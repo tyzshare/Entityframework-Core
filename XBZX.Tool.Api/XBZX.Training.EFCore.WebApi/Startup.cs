@@ -46,8 +46,10 @@ namespace XBZX.Training.EFCore.WebApi
                 //Determine base path for the application.  
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
                 //Set the comments path for the swagger json and ui.  
-                var xmlPath = Path.Combine(basePath, "XBZX.Training.EFCore.WebApi.xml");
-                options.IncludeXmlComments(xmlPath);
+                var serviceXmlPath = Path.Combine(basePath, "XBZX.Training.EFCore.Service.xml");
+                options.IncludeXmlComments(serviceXmlPath);
+                var webapiXmlPath = Path.Combine(basePath, "XBZX.Training.EFCore.WebApi.xml");
+                options.IncludeXmlComments(webapiXmlPath);
             });
 #endif
         }
