@@ -11,6 +11,28 @@
   <ItemGroup>
     <Compile Remove="Controllers\OrgUserBurialPointController.cs" />
     <Compile Remove="DbContent\OrgUserBurialPointRepo.cs" />
+    <Compile Remove="Migrations\20180729093212_MyFirstMigration.cs" />
+    <Compile Remove="Migrations\20180729093212_MyFirstMigration.Designer.cs" />
+    <Compile Remove="Migrations\20180729130231_Update1.cs" />
+    <Compile Remove="Migrations\20180729130231_Update1.Designer.cs" />
+    <Compile Remove="Migrations\20180729134926_Update2.cs" />
+    <Compile Remove="Migrations\20180729134926_Update2.Designer.cs" />
+    <Compile Remove="Migrations\20180729135459_Update3.cs" />
+    <Compile Remove="Migrations\20180729135459_Update3.Designer.cs" />
+    <Compile Remove="Migrations\20180730083830_Update4.cs" />
+    <Compile Remove="Migrations\20180730083830_Update4.Designer.cs" />
+    <Compile Remove="Migrations\20180730100342_Update5.cs" />
+    <Compile Remove="Migrations\20180730100342_Update5.Designer.cs" />
+    <Compile Remove="Migrations\20180730100434_Update6.cs" />
+    <Compile Remove="Migrations\20180730100434_Update6.Designer.cs" />
+    <Compile Remove="Migrations\20180730103244_Update7.cs" />
+    <Compile Remove="Migrations\20180730103244_Update7.Designer.cs" />
+    <Compile Remove="Migrations\20180730161652_Update8.cs" />
+    <Compile Remove="Migrations\20180730161652_Update8.Designer.cs" />
+    <Compile Remove="Migrations\20180918124007_Update.cs" />
+    <Compile Remove="Migrations\20180918124007_Update.Designer.cs" />
+    <Compile Remove="Migrations\20180918124341_Update100.cs" />
+    <Compile Remove="Migrations\20180918124341_Update100.Designer.cs" />
     <Compile Remove="Models\CreateOrgUserBurialPointModel.cs" />
   </ItemGroup>
 

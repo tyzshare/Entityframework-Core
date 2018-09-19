@@ -14,7 +14,8 @@ namespace Myth.SIS.BurialPoint.Api.Models
         /// <summary>
         /// 名称
         /// </summary>
-        [Required, MaxLength(100)]
+        [Required(ErrorMessage = "必填")]
+        [MaxLength(100)]
         public string Name
         {
             get; set;
