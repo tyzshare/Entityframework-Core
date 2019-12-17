@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Myth.SIS.BurialPoint.Api", "Myth.SIS.BurialPoint.Api\Myth.SIS.BurialPoint.Api.csproj", "{064B9DF7-62D9-4FD2-B55D-E97DB985DA4B}"
 EndProject
@@ -10,11 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBZX.Training.EFCore.WebApi", "XBZX.Training.EFCore.WebApi\XBZX.Training.EFCore.WebApi.csproj", "{6B78F879-A568-45A2-A5B5-0EB37FCB2B2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBZX.Training.EFCore.WebApi", "XBZX.Training.EFCore.WebApi\XBZX.Training.EFCore.WebApi.csproj", "{6B78F879-A568-45A2-A5B5-0EB37FCB2B2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBZX.Training.EFCore.Repository", "XBZX.Training.EFCore.Repository\XBZX.Training.EFCore.Repository.csproj", "{F5AC345E-D52F-46B7-9C01-4628D4148F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBZX.Training.EFCore.Repository", "XBZX.Training.EFCore.Repository\XBZX.Training.EFCore.Repository.csproj", "{F5AC345E-D52F-46B7-9C01-4628D4148F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBZX.Training.EFCore.Service", "XBZX.Training.EFCore.Service\XBZX.Training.EFCore.Service.csproj", "{85EB6A86-47EB-4ED3-9677-29F460D4FF34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBZX.Training.EFCore.Service", "XBZX.Training.EFCore.Service\XBZX.Training.EFCore.Service.csproj", "{85EB6A86-47EB-4ED3-9677-29F460D4FF34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Single layer", "Single layer", "{5002F656-C9A6-40F7-9A46-EAA48C000287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{064B9DF7-62D9-4FD2-B55D-E97DB985DA4B} = {5002F656-C9A6-40F7-9A46-EAA48C000287}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4F1FED1-CDD7-4347-A0CD-7F862AFCFAEF}
